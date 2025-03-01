@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot N Click</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .photo {
+            width: 300px;
+            border: 2px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .buy-button {
+            margin-top: 10px;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .buy-button:hover {
+            background-color: gray;
+        }
+        .contact {
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        function buyPhoto(photoId) {
+            const url = `https://buy.stripe.com/test_checkout_url?photo=${photoId}`; // Replace with actual Stripe link
+            window.open(url, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <div class="logo">Spot N Click</div>
+    <div class="gallery">
+        <div class="photo">
+            <img src="photo1.jpg" alt="Photo 1">
+            <button class="buy-button" onclick="buyPhoto('photo1')">Buy Now</button>
+        </div>
+        <div class="photo">
+            <img src="photo2.jpg" alt="Photo 2">
+            <button class="buy-button" onclick="buyPhoto('photo2')">Buy Now</button>
+        </div>
+        <!-- Add more photos here -->
+    </div>
+    <div class="contact">
+        <p>Contact: <a href="mailto:your@email.com" style="color: white;">your@email.com</a></p>
+    </div>
+</body>
+</html>
